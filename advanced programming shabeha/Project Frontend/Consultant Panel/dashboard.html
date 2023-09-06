@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Consultant Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link rel="stylesheet" type="text/css" href="css/styledashboard.css">
+
+
+    <script src="api/jquery-3.6.4.min.js"></script>
+    <script src="api/appointment.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+        <div class="greeting">
+            Have a nice day consultant!
+        </div>
+        <div class="appointments-button">
+            <a href="dashboard.html">View Appointments</a>
+        </div>
+    </header>
+    
+
+
+
+  
+        
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo.png" alt="Your Logo" class="logo">
+        </div>
+        <a href="dashboard.html" class="active">Appointments</a>
+  
+    </div>
+    <div class="content">
+        <!-- Your main content goes here -->
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+        <span class="icon" id="menu-icon">&#9776;</span>
+        <span class="icon" id="close-icon">&times;</span>
+    </div>
+        
+    <script>// JavaScript to toggle the sidebar
+        const sidebar = document.getElementById("sidebar");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        const menuToggle = document.getElementById("menu-toggle");
+        
+        // Function to open the sidebar
+        function openSidebar() {
+          sidebar.style.left = "0";
+          menuIcon.style.display = "none";
+          closeIcon.style.display = "inline-block";
+        }
+        
+        // Function to close the sidebar
+        function closeSidebar() {
+          sidebar.style.left = "-250px";
+          menuIcon.style.display = "inline-block";
+          closeIcon.style.display = "none";
+        }
+        
+        // Initially, the sidebar is closed
+        closeSidebar();
+        
+        // Toggle the sidebar when clicking the menu button
+        menuToggle.addEventListener("click", function () {
+          if (sidebar.style.left === "0px") {
+            closeSidebar();
+          } else {
+            openSidebar();
+          }
+        });
+        </script>       
+            
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="dashboard.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+            </nav>
+
+       
+            <div class="container-fluid pt-4 px-4 mt-5">
+                <div class="bg-light text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                    
+                    </div>
+                    <div class="table-responsive">
+                        <table id="datatable" class="table text-start align-middle table-bordered table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">AppointmentId</th>
+                                    <th scope="col">Consultant Name</th>
+                                    <th scope="col">Customer Name</th>
+                                    <th scope="col">Book Date</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Mobile Number</th>
+                                    <th scope="col">Aprove   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Decline</th>
+                                </tr>
+                            </thead>
+                            <tbody id="prodTable">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+        <!-- Content End -->
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

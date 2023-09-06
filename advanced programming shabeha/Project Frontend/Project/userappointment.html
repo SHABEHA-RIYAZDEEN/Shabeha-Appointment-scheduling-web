@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Appointment</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+
+
+
+
+    <!-- header section starts  -->
+
+    <section class="header">
+
+        <div class="bg" align="center"><img src="img/logo.png" alt="logo" style="width:300px;">
+        </div>
+      
+        
+         <nav class="navbar">
+          <div class="flex">
+         
+            <a href="#home" class="logo">The Jobs Colombo</a>
+            <a href="userappointment.html" class="btn">Reserve Now</a>
+           <div id="menu-btn" class="fas fa-bars"></div>
+         </div>
+      
+            <a href="./index.html">Home</a>
+            <a href="userappointment.html">Appointment</a>
+    
+            <a href="contact.php">About us</a>
+            <a href="contact.php">Contact</a>
+           <a href="http://localhost/shabeweb/admin/login.php" class="btn">Admin</a>
+         </nav>
+      
+      </section>
+      
+      <!-- header section ends -->
+    
+
+
+
+
+      <div class="input-columns">
+        <div class="input-group">
+            <label for="startTimeFilter">Start Time:</label>
+            <input type="number" name="" id="startTimeFilter" placeholder="Starting Time">
+        </div>
+        <div class="input-group">
+            <label for="endTimeFilter">End Time:</label>
+            <input type="number" name="" id="endTimeFilter" placeholder="Ending Time">
+        </div>
+    </div>
+
+
+
+    <!-- appointment Section Begin -->
+  
+    <div class="col-lg-9 col-md-7">
+        <div class="product__discount">
+            <div class="section-title product__discount__title">
+       
+            </div>
+        </div>
+        <div class="row" id="productList">
+            </div>
+            </div>
+    
+
+
+
+    <!-- Footer Section  -->
+    
+    <section class="footer">
+
+        <div class="box-container">
+     
+           <div class="box">
+           <h1>Contact Us</h1>
+           
+             <a href="tel:1234567890"></i> +94-123-4567</a>
+              <a href="mailto:anasbhai@gmail.com"></i> shabehasha@gmail.com</a>
+              <a href="#"></i> No32, Main street, Colombo.</a>
+           </div>
+     
+           <div class="box">
+           <h1>Our Pages</h1>
+              <a href="http://localhost/shabeweb/index.php#home">Home</a>
+     
+              <a href="http://localhost/shabeweb/reserve.php">Appointment</a>
+              <a href="bookings.php">Contact</a>      
+             
+             
+           </div>
+           
+           
+           
+           
+            <div class="box">
+                 <h1>Useful Links</h1>
+              <a href="http://localhost/shabeweb/aboutus.php">About</a>        
+              <a href="http://localhost/shabeweb/gallery.php">Appointment</a>
+              <a href="http://localhost/shabeweb/contact.php">Contact</a>
+             
+           </div>
+           
+           
+     
+          <div class="box">
+            <h1>Gallery</h1>
+           <img src="img/s1.png" width="100" height="75" alt="" /> <img src="img/s2.png" width="100" height="75" alt="" />  <br /><img src="img/s3.png" width="100" height="75" alt="" /> <img src="img/s4.png" width="100" height="75" alt="" />  </div>
+          
+     
+        </div>
+     
+        <div class="credit">2023 Powered by Shabeha Riyazdeen      <a href="#"></div>
+     
+     </section>
+
+
+
+
+
+
+    <script>
+        const productList = document.getElementById("productList");
+        const startTimeFilter = document.getElementById("startTimeFilter");
+        const endTimeFilter = document.getElementById("endTimeFilter");
+
+        // Function to fetch and display products
+        const fetchProducts = () => {
+            // Fetch product data from the API
+            fetch("http://localhost:8080/api/v1/consult/getconsult")
+                .then((response) => response.json())
+                .then((products) => {
+                    // Clear the existing product list
+                    productList.innerHTML = "";
+
+                    // Loop through products and generate HTML content
+                    products.forEach((product) => {
+                        const productItem = document.createElement("div");
+                        productItem.className = "col-lg-4 col-md-6 col-sm-6";
+                        productItem.innerHTML = `
+                        <div class="product__item">
+                        <div class="product__item__pic set-bg">
+                            <img src="img/icon.png" alt="">
+                            <ul class="product__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text" style="margin-top:10px;">
+                            <h6><a href="${getUserLink(product)}" style="text-align: center; font-weight: bold; text-transform: capitalize;">${product.name}</a></h6>
+                            <div style="text-align: center; font-weight: bold; margin-bottom: -50px;">
+                                <p style="text-align: center; font-weight: 600; color: rgb(82, 78, 78);">Available Time: ${product.start_time} -  ${product.end_time}</p>&nbsp;
+                            </div>
+                            <a href="${getUserLink(product)}"><button class="btn btn-outline-primary mt-4">Book Appointment</button></a>
+                        </div>
+                    </div>`;
+
+                        productList.appendChild(productItem);
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error fetching product data:", error);
+                });
+        };
+
+
+        // Function to fetch and display filtered products
+        const fetchFilteredProducts = (startTime) => {
+            // Fetch filtered product data from the API
+            fetch(`http://localhost:8080/api/v1/consult/filter-by-start-time`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    start_time: startTime,
+
+                }),
+            })
+                .then((response) => response.json())
+                .then((filteredProducts) => {
+                    // Clear the existing product list
+                    productList.innerHTML = "";
+                    if (filteredProducts.length === 0) {
+                        // Create an error message element
+                        const errorMessage = document.createElement("div");
+                        errorMessage.className = "col-lg-9 text-danger text-bold";
+                        errorMessage.textContent = "Consultant Not Found.";
+
+                        productList.appendChild(errorMessage);
+                    } else {
+                        // Loop through filtered products and generate HTML content
+                        filteredProducts.forEach((product) => {
+                            const productItem = document.createElement("div");
+                            productItem.className = "col-lg-4 col-md-6 col-sm-6";
+                        productItem.innerHTML = `
+                        <div class="product__item">
+                        <div class="product__item__pic set-bg">
+                            <img src="img/icon.png" alt="">
+                            <ul class="product__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text" style="margin-top:10px;">
+                            <h6><a href="${getUserLink(product)}" style="text-align: center; font-weight: bold; text-transform: capitalize;">${product.name}</a></h6>
+                            <div style="text-align: center; font-weight: bold; margin-bottom: -50px;">
+                                <p style="text-align: center; font-weight: 600; color: rgb(82, 78, 78);">Available Time: ${product.start_time} -  ${product.end_time}</p>&nbsp;
+                            </div>
+                            <a href="${getUserLink(product)}"><button class="btn btn-outline-primary mt-4">Book Appointment</button></a>
+                        </div>
+                    </div>`;
+
+                            productList.appendChild(productItem);
+                        });
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching filtered product data:", error);
+                });
+        };
+
+
+        // Function to fetch and display filtered products
+        const fetchFilteredProductsend = (endTime) => {
+            // Fetch filtered product data from the API
+            fetch(`http://localhost:8080/api/v1/consult/filter-by-end-time`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    end_time: endTime,
+
+                }),
+            })
+                .then((response) => response.json())
+                .then((filteredProducts) => {
+                    // Clear the existing product list
+                    productList.innerHTML = "";
+                    if (filteredProducts.length === 0) {
+                        // Create an error message element
+                        const errorMessage = document.createElement("div");
+                        errorMessage.className = "col-lg-9 text-danger text-bold";
+                        errorMessage.textContent = "Consultant Not Found.";
+
+                        productList.appendChild(errorMessage);
+                    } else {
+                        // Loop through filtered products and generate HTML content
+                        filteredProducts.forEach((product) => {
+                            const productItem = document.createElement("div");
+                            productItem.className = "col-lg-4 col-md-6";
+                            productItem.innerHTML = `
+                        <div class="product__item">
+                                <div class="product__item__pic set-bg">
+                                    <img src="img/icon.png" alt="">
+                                    <ul class="product__hover">
+                                    </ul>
+                                </div>
+                                <div class="product__item__text" style="margin-top:10px;">
+                    <h6><a href="${getUserLink(product)}" style="text-align: center; font-weight: bold; text-transform: capitalize;">${product.name}</a></h6>
+                    <div style="text-align: center; font-weight: 500; margin-bottom: -50px;">
+                        <p style="text-align: center; font-weight: 600; color: rgb(82, 78, 78);">Available Time: ${product.start_time} -  ${product.end_time}</p>&nbsp;
+        </div>
+        <a href="${getUserLink(product)}"><button class="btn btn-outline-primary mt-4">Book Appointment</button></a>
+                            </div>
+                        `;
+
+                            productList.appendChild(productItem);
+                        });
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching filtered product data:", error);
+                });
+        };
+
+
+
+
+        // Event listener for input changes in the filter fields
+        startTimeFilter.addEventListener("input", () => {
+            const startTime = startTimeFilter.value;
+            const endTime = endTimeFilter.value;
+            if (startTime === "") {
+                fetchProducts();
+            } else {
+                fetchFilteredProducts(startTime);
+            }
+        });
+
+        endTimeFilter.addEventListener("input", () => {
+            const startTime = startTimeFilter.value;
+            const endTime = endTimeFilter.value;
+            if (endTime === "") {
+                fetchProducts();
+            } else {
+                fetchFilteredProductsend(endTime);
+            }
+        });
+
+        // Initial fetch to load all products by default
+        fetchProducts();
+
+
+        // Function to determine the appropriate link based on user login status
+        const getUserLink = (product) => {
+            // Replace this with your actual logic to check user session or authentication
+            var username = sessionStorage.getItem('userName');
+            if (!username) {
+                window.location.href = 'login.html'; // Redirect to login page
+            } else {
+                return `checkout.html?name=${encodeURIComponent(product.name)}`;
+            }
+        };
+    </script>
+    <!-- Product Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>

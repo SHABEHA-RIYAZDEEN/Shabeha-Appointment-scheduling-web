@@ -1,0 +1,198 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header */
+.header {
+    background-color: #12c7cd; /* Ocean green background color */
+    color: white; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+/* Style the logo */
+.logo img {
+    max-height: 40px; /* Adjust the height as needed */
+}
+
+/* Style the greeting message */
+.greeting {
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+/* Style the "View Appointments" button */
+.appointments-button a {
+    background-color: #009688; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.appointments-button a:hover {
+    background-color: #007B7F; /* Change the background color on hover */
+}
+
+
+
+.sidebar {
+  width: 250px; /* Adjust the width as needed */
+  background-color: #007bff; /* Blue background color */
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto; /* Add scrollbars if content overflows */
+}
+
+/* Style for sidebar links */
+.sidebar a {
+  padding: 15px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: background-color 0.3s, transform 0.2s; /* Add transition for hover and click */
+}
+
+/* Highlight the current page */
+.sidebar a.active {
+  background-color: #0056b3; /* Slightly darker blue for active item */
+}
+
+/* Add hover effect to links */
+.sidebar a:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for the sidebar header */
+.sidebar-header {
+  padding: 20px;
+  background-color: #0056b3; /* Darker blue for header */
+}
+
+/* Logo image */
+.logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Content area styles */
+.content {
+  margin-left: 250px; /* Match the sidebar's width */
+  padding: 20px;
+}
+
+/* Animation for sidebar items on click */
+.sidebar a:active {
+  transform: scale(0.95); /* Add a slight scale-down effect on click */
+}
+
+
+/* Add styles for the menu toggle button */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 10px;
+  display: none;
+  color: #fff;
+}
+
+
+
+
+.menu-toggle {
+position: fixed;
+top: 20px;
+left: 20px;
+cursor: pointer;
+z-index: 1000;
+}
+
+.icon {
+font-size: 36px; /* Increase the icon size */
+margin-right: 10px;
+display: none;
+color: #ffffff; /* Change icon color to blue */
+}
+
+/* Show the menu icon by default */
+#menu-icon {
+display: inline-block;
+}
+
+
+
+
+/*TABLE*/
+  /* Style for the table container */
+  .bg-light {
+    background-color: #f5f5f500;
+}
+
+/* Style for the table */
+#datatable {
+    background-color: #ffffff;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+#datatable th, #datatable td {
+    padding: 10px;
+}
+
+#datatable th {
+    background-color: #12c7cd;
+    color: #fff;
+}
+
+#datatable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style for action buttons */
+.btn-primary{
+    background-color: #009dff;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+
+.btn-danger{
+    background-color: #ff0d00;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #1a8e8e;
+}
+
+.btn-danger:hover {
+    background-color: #9d2121;
+}

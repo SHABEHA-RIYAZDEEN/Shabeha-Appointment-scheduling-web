@@ -1,0 +1,771 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+   --main-color:;
+   --sub-color:;
+   --white:#fff;
+   --border:.1rem solid #000;
+}
+
+*{
+   font-family:Arial, Helvetica, sans-serif ;
+   margin: 0; padding: 0;
+   box-sizing: border-box;
+   outline: none; border: none;
+   text-decoration: none;
+}
+
+*::selection{
+   background-color: var(--sub-color);
+   color: var(--main-color);
+}
+
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 2rem;
+}
+
+body{
+   background-color: var(--main-color);
+   /* padding-bottom: 7.5rem; */
+}
+
+section{
+ 
+}
+
+.btn{
+	display: inline-block;
+	cursor: pointer;
+	border: var(--border);
+	font-size: 1.8rem;
+	color: #11111f;
+	text-align: center;
+	text-transform: capitalize;
+	transition: .2s linear;
+	margin-top: 0;
+
+
+   background-color: ;
+	border-color: #11111f;
+	max-width: 1200px;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	padding-top: 3;
+	padding-right: auto;
+	padding-bottom: 2;
+	padding-left: auto;
+}
+
+.btn:hover{
+   
+   background-color:#fff;
+   color: #fff;
+   border-color:#fff;
+   
+}
+
+
+
+.bg{
+	background-color:#11111f;
+}
+
+.header{
+   padding-bottom: 0;
+ background-color:#4ec3e0;
+   
+}
+
+.header .flex{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1.5rem;
+      
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.header .flex .logo{
+   color:#11111f;
+   font-size: 2.5rem;
+}
+
+.header .flex .btn{
+   margin-top: 0;
+  
+}
+
+.header .flex .fa-bars{
+   font-size: 3rem;
+   cursor: pointer;
+   color: var(--sub-color);
+   display: none;
+   
+}
+
+.header .navbar{
+	  
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   gap: 1.5rem;
+  
+   background-color: var(--sub-color);
+   padding: .5rem;
+   border-radius: .5rem;
+   margin-bottom:2px;
+}
+
+.header .navbar a{
+	
+   font-size: 1.8rem;
+   color: #11111f;
+   padding: 1rem 3rem;
+   
+}
+
+.header .navbar a:hover{
+   background-color:#003 ;
+   color: #fff;
+  
+  
+}
+
+
+
+
+.home .box img{
+   border-radius: .5rem;
+   height: 75vh;
+   width: 100%;
+   object-fit: cover;
+}
+
+.home .box .flex{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1.5rem;
+   flex-wrap: wrap;
+   margin-top: 1.5rem;
+}
+
+.home .box .flex h3{
+   font-size: 2.5rem;
+   color: var(--sub-color);
+   text-transform: capitalize;
+}
+
+.swiper-button-prev{
+   left: 0%;
+}
+
+.swiper-button-next{
+   right: 0;
+}
+
+
+
+
+
+.btnn{
+	
+   display: inline-block;
+  
+   margine-right:-5px;
+   cursor: pointer;
+   padding: 1rem 9rem;
+   border: var(--border);
+   font-size: 1.8rem;
+   color: #000;
+   text-align:right;
+   text-transform: capitalize;
+   transition: .2s linear;
+   background-color:#FFF;
+
+
+      
+   
+}
+
+.btnn:hover{
+  
+   background-color:#003 ;
+   color:#ffffff ;
+   border-color:#ffffff;
+}
+
+
+
+
+
+
+
+
+.wrapper{
+	margine:0px;
+	padding 0px;
+	box-sizing:border-box;
+	font-family: 'Poppins', sans-serif;
+	text-align:center;
+	color:#fff;
+	line-height:1.5;
+	letter-spacing:1px;
+	min-height:100vh;
+	width:100%;
+	background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('../images/s2.jpg');
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	margin-bottom:1px;
+	
+	}
+	
+.testimonial{
+	padding:30px; 100px;
+	
+	}
+
+.articles h1{
+	font-size:50px;
+	font-weight:800;
+	text-transform:uppercase;
+	
+	}
+
+.articles h1:after{
+	content:"";
+	height:5px;
+	width:225px;
+	background-color:#fff;
+	display:block;
+	margin:auto;
+	
+	
+	}
+	
+blockquote{
+	font-family:"Arial Black", Gadget, sans-serif;
+	margin-left:70px;
+	margin-right:70px;
+	font-size:20px;
+	margin-top:30px;
+	
+	}
+
+.articles h5{
+	text-transform:uppercase;
+	font-size:30px;
+	margin-top:30px;
+	letter-spacing:1.5px;
+	}
+
+
+
+.articles p{
+	text-transform:uppercase;
+	font-size:17px;
+	margin-top:30px;
+	}
+
+
+
+
+
+
+
+.about .row{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	align-items: center;
+}
+
+.about .row .image{
+   flex: 1 1 40rem;
+}
+
+.about .row .image img{
+   width: 40rem;
+   border-radius: .5rem;
+}
+
+.about .row .content{
+   flex:1 1 40rem;
+}
+
+.about .row .content h3{
+	font-size: 3rem;
+	color: var(--sub-color);
+	text-transform: capitalize;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.about .row .content p{
+   line-height: 2;
+   padding: 1rem 0;
+   font-size: 1.7rem;
+   color: var(--sub-color);
+}
+
+.about .row.revers{
+   flex-flow: row-reverse;
+   margin: 3rem 0;
+   flex-wrap: wrap;
+}
+
+.services .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+   gap: 1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.services .box-container .box{
+   padding: 2rem;
+   text-align: center;
+}
+
+.services .box-container .box img{
+   height: 7rem;
+   margin-bottom: 1rem;
+}
+
+.services .box-container .box h3{
+   font-size: 2rem;
+   color: var(--sub-color);
+   text-transform: capitalize;
+   margin: 1rem 0;
+}
+
+.services .box-container .box p{
+   line-height: 2;
+   font-size: 1.5rem;
+   color:var(--sub-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bttuon{
+   display: inline-block;
+   cursor: pointer;
+   padding: 1rem 3rem;
+   border: var(--border);
+   font-size: 1.8rem;
+   color: #000;
+   text-align: center;
+   text-transform: capitalize;
+   transition: .2s linear;
+   margin-top: 1rem;
+   margin-left:3rem;
+   background-color:#4EC3E0;
+   
+}
+
+.bttuon:hover{
+ 
+   background-color:#06F ;
+   color:#ffffff ;
+   border-color:#ffffff;
+}
+
+
+
+
+
+
+
+.footer{
+	width:100%}
+.footer .box-container{
+	width:100%;
+	  background-color:#4EC3E0 ;
+	  padding-top:30px;
+	  
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap: 1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+   padding-bottom: 3rem;
+   
+	padding-left:170px;
+	padding-right:170px;
+}
+
+.footer .box-container .box a{
+	
+   display: block;
+   font-size: 1.8rem;
+   color: var(--sub-color);
+   padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover{
+   color: var(--white);
+}
+
+.footer .box-container .box:first-child i{
+
+}
+
+.footer .box-container .box:nth-child(2){
+   
+}
+
+.footer .box-container .box:last-child{
+   
+}
+
+.footer .box-container .box:last-child i{
+   
+}
+
+.footer .credit{
+  
+   padding: 2rem;
+   text-align: center;
+   color: #fff;
+   background-color: #11111f;
+   font-size: 2rem;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+   .header .flex .fa-bars{
+      display: inline-block;
+   }
+
+   .header .flex .btn{
+      display: none;
+   }
+
+   .header .navbar{
+      flex-flow: column;
+      padding: 2rem;
+      display: none;
+   }
+
+   .header .navbar.active{
+      display: flex;
+   }
+
+}
+
+@media (max-width:768px){
+
+   .home .box img{
+      height: 40vh;
+   }
+
+   .swiper-button-next,
+   .swiper-button-prev{
+      top: 35%;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+   .header .flex .logo{
+      font-size: 2rem;
+   }
+
+   .home .box img{
+      height: 25rem;
+   }
+
+   .about .row .image img{
+      width: 100%;
+   }
+
+   .gallery img{
+      height: 25rem;
+      width: 30rem;
+   }
+
+   .bookings .box-container{
+      grid-template-columns: 1fr;
+   }
+
+}
+
+
+/*slider*/
+body {
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+}
+
+.carousel-container {
+   width: 100%;
+   height: 200px; /* Adjust the height as needed */
+   overflow: hidden;
+   position: relative;
+}
+
+.carousel-slide {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+   max-width: 100%;
+   max-height: 100%;
+   object-fit: cover;
+}
+/* ... Previous CSS code ... */
+
+.carousel-indicators {
+   text-align: center;
+   margin-top: 10px;
+}
+
+.carousel-indicator {
+   width: 12px;
+   height: 12px;
+   background-color: #bbb;
+   border-radius: 50%;
+   display: inline-block;
+   margin: 0 5px;
+   cursor: pointer;
+}
+
+.carousel-indicator.active {
+   background-color: #333;
+}
+
+
+
+
+
+/**/
+/* Apply CSS styles for the layout */
+.input-columns {
+   display: flex;
+   justify-content: space-between;
+   border: 2px solid lightblue;
+   border-radius: 10px;
+   width: 50%;
+   padding: 10px;
+   margin-left: auto;
+   margin-right: 35px;
+   font-size: 20px;
+   background-image: url('https://pub-static.fotor.com/assets/bg/78f0d7f1-e8e5-4f87-9af7-17495858c8ec.jpg'); /* Replace 'path-to-your-image.jpg' with your image file path */
+   background-size: cover; /* Cover the entire container with the background image */
+   background-repeat: no-repeat; /* Prevent the background image from repeating */
+   background-position: center; /* Center the background image */
+}
+
+.input-group {
+   flex-basis: 48%;
+   margin: 0;
+}
+
+.input-group input[type="number"] {
+   border: 2px solid blue;
+   padding: 8px;
+   width: 100%; /* Make the input fields expand to 100% of their parent's width */
+}
+
+
+/* Styles for the .product__item container */
+.product__item {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   background-image: url('https://static.vecteezy.com/system/resources/previews/003/127/954/non_2x/abstract-template-blue-background-white-squares-free-vector.jpg'); /* Replace 'path-to-your-image.jpg' with your image file path */
+   background-size: cover; /* Cover the entire container with the background image */
+   background-repeat: no-repeat; /* Prevent the background image from repeating */
+   background-position: center; /* Center the background image */
+   border: 1px solid #e0e0e0;
+   padding: 10px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   transition: box-shadow 0.3s ease-in-out;
+ 
+}
+
+.product__item:hover {
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for the product image */
+.product__item__pic img {
+   width: 100%;
+   height: auto;
+}
+
+/* Styles for the product title */
+.product__item__text h6 a {
+   font-weight: bold;
+   text-transform: capitalize;
+   color: #333;
+   text-decoration: none;
+}
+
+/* Styles for the Available Time section */
+.product__item__text div {
+   text-align: center;
+   font-weight: bold;
+   margin-bottom: 10px;
+}
+
+.product__item__text p {
+   font-weight: 600;
+   color: rgb(82, 78, 78);
+   margin-bottom: 23PX;
+   font-size: 16PX;
+}
+
+/* Styles for the "Book Appointment" button */
+.product__item__text a {
+   display: block;
+   text-align: center;
+   text-decoration: none;
+   font-size: 20PX;
+}
+
+.btn.btn-outline-primary {
+   background-color: transparent;
+   margin-top: 50PX;
+   border: 2px solid #ffffff;
+   color: #ffffff;
+   padding: 10px 20px;
+   font-weight: bold;
+   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn.btn-outline-primary:hover {
+   background-color: #000811;
+   color: #fff;
+}
+
+
+
+
+/* Apply styles to the form */
+.checkout__form {
+   background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80'); /* Replace 'path-to-your-image.jpg' with your image file path */
+   background-size: cover; /* Cover the entire container with the background image */
+   background-repeat: no-repeat; /* Prevent the background image from repeating */
+   background-position: center; /* Center the background image */
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   font-size: 17px;
+}
+
+.form-group {
+   margin-bottom: 20px;
+}
+
+label {
+   font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"] {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+
+.checkout__input__add {
+   /* Add specific styles for the "Time" input if needed */
+}
+
+button.site-btn {
+   background-color: #39cdff;
+   color: #fff;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+button.site-btn:hover {
+   background-color: #00ffee;
+}

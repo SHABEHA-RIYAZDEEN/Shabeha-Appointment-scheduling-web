@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<style>/* Center the login section vertically and horizontally */
+body {
+    background-image: url('https://i.pinimg.com/originals/d1/b4/16/d1b416e60c46e7f6269f425c2bb8f683.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
+    background-size: cover; /* Adjust the background size as needed */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+
+    .login1 {
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        min-height: 100vh;
+      
+    }
+    .signup1 {
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        min-height: 100vh;
+        
+        margin-top: -50vh;
+    }
+    
+    /* Style the login container */
+    .forms_form {
+        background-color: #fff; /* Change to your desired background color */
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(90, 90, 90, 0.1);
+        width: 300px; /* Adjust the width as needed */
+        padding: 20px;
+        text-align: center;
+    }
+    
+    /* Style the login form title */
+    .forms_title {
+        font-size: 24px; /* Change to your desired font size */
+        margin-bottom: 20px;
+    }
+    
+    /* Style form fields */
+    .forms_field-input {
+        width: 93%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc; /* Add desired border styles */
+        border-radius: 4px;
+        outline: none;
+    }
+    
+    /* Style the login button */
+    .forms_buttons-action {
+        margin-top: 10PX;
+        background-color: #00d3e6; /* Change to your desired button color */
+        color: #fff; /* Change to your desired text color */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px; /* Change to your desired font size */
+        margin-bottom: 20PX;
+    }
+    
+    /* Add hover effect to the login button */
+    .forms_buttons-action:hover {
+        background-color: #109ef6; /* Change to your desired hover color */
+    }
+    
+    /* Center the login button */
+    .forms_buttons {
+        text-align: center;
+    }
+    
+    /* Style any additional elements as needed */
+    </style>
+<body>
+ 
+   
+       
+<section class="login1">
+                    <h2 class="forms_title">Login</h2>
+                    <div class="forms_form">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="text" placeholder="Name" class="forms_field-input" id="yourUsername" required autofocus />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="Password" class="forms_field-input" id="yourPassword" required />
+                            </div>
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <input value="Log In" onclick="login()" class="forms_buttons-action">
+                        </div>
+                   
+                        </div>
+                        <h4>OR IF YOU DON'T HAVE AN ACCOUNT!</h4>          
+                  
+</section>
+
+
+
+  <section class="signup1">     
+                
+                    <h2 class="forms_title">Sign Up</h2>
+                    <div class="forms_form">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="text" placeholder="Name" id="input1" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="text" placeholder="Address" id="input2" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="text" placeholder="Mobile" id="input3" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="Password" id="input4" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="Confirm Password" id="input5" class="forms_field-input" required />
+                            </div>
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <input value="Sign up" onclick="signUp()" class="forms_buttons-action">
+                        </div>
+                    </div>
+             
+    </section>
+
+               
+
+
+
+
+    <script>
+        /**
+         * Variables
+         */
+        const signupButton = document.getElementById('signup-button'),
+            loginButton = document.getElementById('login-button'),
+            userForms = document.getElementById('user_options-forms')
+
+        /**
+         * Add event listener to the "Sign Up" button
+         */
+        signupButton.addEventListener('click', () => {
+            userForms.classList.remove('bounceRight')
+            userForms.classList.add('bounceLeft')
+        }, false)
+
+        /**
+         * Add event listener to the "Login" button
+         */
+        loginButton.addEventListener('click', () => {
+            userForms.classList.remove('bounceLeft')
+            userForms.classList.add('bounceRight')
+        }, false)
+
+    window.onload = function () {
+      var urlParams = new URLSearchParams(window.location.search);
+      var c_name = urlParams.get('name');
+
+      if (c_name) {
+        // Store the name in session storage
+        sessionStorage.setItem('name', c_name);
+        console.log(c_name);
+      }
+    }
+
+    function signUp() {
+      const name = document.getElementById("input1").value;
+      const address = document.getElementById("input2").value;
+      const mobile = document.getElementById("input3").value;
+      const password = document.getElementById("input4").value;
+      const confirmPassword = document.getElementById("input5").value;
+
+      // Check if passwords match
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+      }
+
+      const userData = {
+        name: name,
+        address: address,
+        mobile: mobile,
+        password: password
+      };
+
+      // Send the POST request to the API endpoint
+      fetch("http://localhost:8080/api/v1/users/saveusers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userData)
+      })
+        .then(response => response.json())
+        .then(data => {
+          // Handle the API response here
+           sessionStorage.setItem("userName", data.name);
+          console.log(`Welcome, ${data.name}!`);
+          window.location.href = 'userappointment.html';
+          // You can redirect the user to a success page or perform other actions
+        })
+        .catch(error => {
+          console.error("Error signing up:", error);
+          // Handle the error (e.g., show an error message)
+        });
+    }
+
+
+    function login() {
+      const username = document.getElementById("yourUsername").value;
+      const password = document.getElementById("yourPassword").value;
+
+      // API endpoint
+      const apiUrl = "http://localhost:8080/api/v1/consult/login";
+
+      // Data to be sent in the request body
+      const data = {
+        name: username,
+        password: password
+      };
+
+      fetch(apiUrl, {
+        method: "POST", // or "GET" depending on your API
+        headers: {
+          "Content-Type": "application/json"
+          // You might need to include other headers like authentication tokens
+        },
+        body: JSON.stringify(data)
+      })
+        .then(response => response.json())
+        .then(result => {
+          // Handle the API response here
+          const user = result.data;
+
+          // Store the user's name in sessionStorage
+          sessionStorage.setItem("userName", data.name);
+          console.log(`Welcome, ${data.name}!`);
+          window.location.href = 'userappointment.html';
+          
+        })
+        .catch(error => {
+          // Handle errors here
+          console.error("Error:", error);
+        });
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

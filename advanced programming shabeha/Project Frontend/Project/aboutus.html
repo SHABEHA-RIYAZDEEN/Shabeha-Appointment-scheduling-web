@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+  
+
+    <!-- Css Styles -->
+
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+
+
+
+
+    <!-- header section starts  -->
+
+    <section class="header">
+
+        <div class="bg" align="center"><img src="img/logo.png" alt="logo" style="width:300px;">
+        </div>
+      
+        
+         <nav class="navbar">
+          <div class="flex">
+         
+            <a href="#home" class="logo">The Jobs Colombo</a>
+            <a href="userappointment.html" class="btn">Reserve Now</a>
+           <div id="menu-btn" class="fas fa-bars"></div>
+         </div>
+      
+            <a href="./index.html">Home</a>
+            <a href="userappointment.html">Appointment</a>
+    
+            <a href="contact.php">About us</a>
+            <a href="contact.php">Contact</a>
+           <a href="http://localhost/shabeweb/admin/login.php" class="btn">Admin</a>
+         </nav>
+      
+      </section>
+      
+    <style>/* Reset some default browser styles */
+      
+        
+        /* Style the about section */
+        .about {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .about img {
+            max-width: 40%;
+            border-radius: 5px;
+            margin-right: 20px;
+            margin-left: 30px;
+            margin-top: 20px;
+        }
+        
+        .about-text {
+            flex-grow: 1;
+        }
+        
+        .about h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        /* Style the services section */
+        .services {
+            text-align: center;
+        }
+        
+        .services h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .service {
+            margin: 20px;
+        }
+        
+        .service img {
+            max-width: 37%;
+            border-radius: 5px;
+
+        }
+        
+        .service h3 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        .large-text {
+            font-size: 16px; /* Increase the font size for paragraphs */
+            line-height: 1.6; /* Improve readability with line spacing */
+        }
+</style>        
+  
+
+<div class="container">
+    <section class="about">
+        <img src="img/aboutcv2.png" alt="Consultation Image">
+        <div class="about-text">
+            <h2>Our Job Consultation Services</h2>
+            <p class="large-text">We specialize in providing expert job consultation services to help individuals find the perfect career opportunities. Our team of experienced consultants is dedicated to guiding you through every step of your job search journey. Whether you're a recent graduate or an experienced professional, we are here to assist you in achieving your career goals.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <img src="img/aboutcv.png" alt="Resume Writing">
+            <h3>Resume Writing</h3>
+            <p class="large-text">We offer professional resume writing services to make your resume stand out to potential employers.</p>
+        </div>
+        <div class="service">
+            <img src="img/interview.jpg" alt="Interview Coaching">
+            <h3>Interview Coaching</h3>
+            <p class="large-text">Our interview coaching sessions prepare you to confidently ace job interviews and succeed in your career.</p>
+        </div>
+        <div class="service">
+            <img src="img/career.jpg" alt="Career Guidance">
+            <h3>Career Guidance</h3>
+            <p class="large-text">Get personalized career guidance and advice from our experts to make informed decisions about your future.</p>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Section  -->
+    
+    <section class="footer">
+
+        <div class="box-container">
+     
+           <div class="box">
+           <h1>Contact Us</h1>
+           
+             <a href="tel:1234567890"></i> +94-123-4567</a>
+              <a href="mailto:anasbhai@gmail.com"></i> shabehasha@gmail.com</a>
+              <a href="#"></i> No32, Main street, Colombo.</a>
+           </div>
+     
+           <div class="box">
+           <h1>Our Pages</h1>
+              <a href="http://localhost/shabeweb/index.php#home">Home</a>
+     
+              <a href="http://localhost/shabeweb/reserve.php">Appointment</a>
+              <a href="bookings.php">Contact</a>      
+             
+             
+           </div>
+           
+           
+           
+           
+            <div class="box">
+                 <h1>Useful Links</h1>
+              <a href="http://localhost/shabeweb/aboutus.php">About</a>        
+              <a href="http://localhost/shabeweb/gallery.php">Appointment</a>
+              <a href="http://localhost/shabeweb/contact.php">Contact</a>
+             
+           </div>
+           
+           
+     
+          <div class="box">
+            <h1>Gallery</h1>
+           <img src="img/s1.png" width="100" height="75" alt="" /> <img src="img/s2.png" width="100" height="75" alt="" />  <br /><img src="img/s3.png" width="100" height="75" alt="" /> <img src="img/s4.png" width="100" height="75" alt="" />  </div>
+          
+     
+        </div>
+     
+        <div class="credit">2023 Powered by Shabeha Riyazdeen      <a href="#"></div>
+     
+     </section>
+
+
+
+
+
+
+    <script>
+        const productList = document.getElementById("productList");
+        const startTimeFilter = document.getElementById("startTimeFilter");
+        const endTimeFilter = document.getElementById("endTimeFilter");
+
+        // Function to fetch and display products
+        const fetchProducts = () => {
+            // Fetch product data from the API
+            fetch("http://localhost:8080/api/v1/consult/getconsult")
+                .then((response) => response.json())
+                .then((products) => {
+                    // Clear the existing product list
+                    productList.innerHTML = "";
+
+                    // Loop through products and generate HTML content
+                    products.forEach((product) => {
+                        const productItem = document.createElement("div");
+                        productItem.className = "col-lg-4 col-md-6 col-sm-6";
+                        productItem.innerHTML = `
+                        <div class="product__item">
+                        <div class="product__item__pic set-bg">
+                            <img src="img/icon.png" alt="">
+                            <ul class="product__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text" style="margin-top:10px;">
+                            <h6><a href="${getUserLink(product)}" style="text-align: center; font-weight: bold; text-transform: capitalize;">${product.name}</a></h6>
+                            <div style="text-align: center; font-weight: bold; margin-bottom: -50px;">
+                                <p style="text-align: center; font-weight: 600; color: rgb(82, 78, 78);">Available Time: ${product.start_time} -  ${product.end_time}</p>&nbsp;
+                            </div>
+                            <a href="${getUserLink(product)}"><button class="btn btn-outline-primary mt-4">Book Appointment</button></a>
+                        </div>
+                    </div>`;
+
+                        productList.appendChild(productItem);
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error fetching product data:", error);
+                });
+        };
+
+
+        // Function to fetch and display filtered products
+        const fetchFilteredProducts = (startTime) => {
+            // Fetch filtered product data from the API
+            fetch(`http://localhost:8080/api/v1/consult/filter-by-start-time`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    start_time: startTime,
+
+                }),
+            })
+                .then((response) => response.json())
+                .then((filteredProducts) => {
+                    // Clear the existing product list
+                    productList.innerHTML = "";
+                    if (filteredProducts.length === 0) {
+                        // Create an error message element
+                        const errorMessage = document.createElement("div");
+                        errorMessage.className = "col-lg-9 text-danger text-bold";
+                        errorMessage.textContent = "Consultant Not Found.";
+
+                        productList.appendChild(errorMessage);
+                    } else {
+                        // Loop through filtered products and generate HTML content
+                        filteredProducts.forEach((product) => {
+                            const productItem = document.createElement("div");
+                            productItem.className = "col-lg-4 col-md-6 col-sm-6";
+                        productItem.innerHTML = `
+                        <div class="product__item">
+                        <div class="product__item__pic set-bg">
+                            <img src="img/icon.png" alt="">
+                            <ul class="product__hover">
+                            </ul>
+                        </div>
+                        <div class="product__item__text" style="margin-top:10px;">
+                            <h6><a href="${getUserLink(product)}" style="text-align: center; font-weight: bold; text-transform: capitalize;">${product.name}</a></h6>
+                            <div style="text-align: center; font-weight: bold; margin-bottom: -50px;">
+                                <p style="text-align: center; font-weight: 600; color: rgb(82, 78, 78);">Available Time: ${product.start_time} -  ${product.end_time}</p>&nbsp;
+                            </div>
+                            <a href="${getUserLink(product)}"><button class="btn btn-outline-primary mt-4">Book Appointment</button></a>
+                        </div>
+                    </div>`;
+
+                            productList.appendChild(productItem);
+                        });
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching filtered product data:", error);
+                });
+        };
+
+
+        // Function to fetch and display filtered products
+        const fetchFilteredProductsend = (endTime) => {
+            // Fetch filtered product data from the API
+            fetch(`http://localhost:8080/api/v1/consult/filter-by-end-time`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    end_time: endTime,
+
+                }),
+            })
+                .then((response) => response.json())
+                .then((filteredProducts) => {
+                    // Clear the existing product list
+                    productList.innerHTML = "";
+                    if (filteredProducts.length === 0) {
+                        // Create an error message element
+                        const errorMessage = document.createElement("div");
+                        errorMessage.className = "col-lg-9 text-danger text-bold";
+                        errorMessage.textContent = "Consultant Not Found.";
+
+                        productList.appendChild(errorMessage);
+                    } else {
+                        // Loop through filtered products and generate HTML content
+                        filteredProducts.forEach((product) => {
+                            const productItem = document.createElement("div");
+                            productItem.className = "col-lg-4 col-md-6";
+                            productItem.innerHTML = `
+                        <div class="product__item">
+                                <div class="product__item__pic set-bg">
+                                    <img src="img/icon.png" alt="">
+                                    <ul class="product__hover">
+                                    </ul>
+                                </div>
+                                <div class="product__item__text" style="margin-top:10px;">
+                    <h6><a href="${getUserLink(product)}" style="text-align: center; font-weight: bold; text-transform: capitalize;">${product.name}</a></h6>
+                    <div style="text-align: center; font-weight: 500; margin-bottom: -50px;">
+                        <p style="text-align: center; font-weight: 600; color: rgb(82, 78, 78);">Available Time: ${product.start_time} -  ${product.end_time}</p>&nbsp;
+        </div>
+        <a href="${getUserLink(product)}"><button class="btn btn-outline-primary mt-4">Book Appointment</button></a>
+                            </div>
+                        `;
+
+                            productList.appendChild(productItem);
+                        });
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching filtered product data:", error);
+                });
+        };
+
+
+
+
+        // Event listener for input changes in the filter fields
+        startTimeFilter.addEventListener("input", () => {
+            const startTime = startTimeFilter.value;
+            const endTime = endTimeFilter.value;
+            if (startTime === "") {
+                fetchProducts();
+            } else {
+                fetchFilteredProducts(startTime);
+            }
+        });
+
+        endTimeFilter.addEventListener("input", () => {
+            const startTime = startTimeFilter.value;
+            const endTime = endTimeFilter.value;
+            if (endTime === "") {
+                fetchProducts();
+            } else {
+                fetchFilteredProductsend(endTime);
+            }
+        });
+
+        // Initial fetch to load all products by default
+        fetchProducts();
+
+
+        // Function to determine the appropriate link based on user login status
+        const getUserLink = (product) => {
+            // Replace this with your actual logic to check user session or authentication
+            var username = sessionStorage.getItem('userName');
+            if (!username) {
+                window.location.href = 'login.html'; // Redirect to login page
+            } else {
+                return `checkout.html?name=${encodeURIComponent(product.name)}`;
+            }
+        };
+    </script>
+    <!-- Product Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>
