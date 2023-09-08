@@ -61,6 +61,7 @@ public class consultcontroller {
 		consult2.setEnd_time(consult.getEnd_time());
 		consult2.setNic(consult.getNic());
 		consult2.setPassword(consult.getPassword());
+		
 
 		consult updateConsult = consultRepository.save(consult2);
 		return ResponseEntity.ok(updateConsult);
